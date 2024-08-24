@@ -20,7 +20,7 @@ const GsapTimeline = () => {
 
   useGSAP(() => {
     timeline.to("#yellow-box", {
-      y: 250,
+      y: 450,
       scale: 2,
       rotation: 360,
       borderRadius: "100%",
@@ -30,7 +30,7 @@ const GsapTimeline = () => {
   });
 
   timeline.to("#yellow-box", {
-    x: 200,
+    x: 250,
     scale: 2,
     rotation: 360,
     borderRadius: "100%",
@@ -72,7 +72,17 @@ const GsapTimeline = () => {
       </p>
 
       <div className="mt-20 space-y-10">
-        <button onClick={() => {}}>Play/Pause</button>
+        <button
+          onClick={() => {
+            if (timeline.paused()) {
+              timeline.play();
+            } else {
+              timeline.pause();
+            }
+          }}
+        >
+          Play/Pause
+        </button>
 
         <div id="yellow-box" className="w-20 h-20 bg-yellow-500 rounded-lg" />
       </div>
